@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const students = [
+            { name: "Alice", marks: 98 },
+            { name: "Bob", marks: 89 },
+            { name: "Charlie", marks: 90 },
+            { name: "David", marks: 55 },
+            { name: "Emily", marks: 96 }
+        ];
+
+        // Convert marks to CGPA
+        const studentcgpa = students.map(student => {
+           return {
+            name: student.name,
+            cgpa: (student.marks / 10).toFixed(2) 
+        }});
+
+        // Filter top students (convert cgpa to number for comparison)
+        const topStudents = studentcgpa.filter(student => student.cgpa>= 9);
+
+        // Display top students
+        document.write("<h3>Top Students:</h3>");
+        topStudents.forEach(student => {
+            document.write(student.name + " - " + student.cgpa + "<br>");
+        });
+// Count of top students
+        const totalCount = topStudents.reduce((sum)=>sum+1,0);
+        document.write("<h3>Total Top Students: " + totalCount + "</h3>");
+    </script>
+</body>
+</html>

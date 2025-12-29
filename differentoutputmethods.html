@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Different Ouptput methods</title>
+</head>
+<body>
+
+    <h2>Javascript output methods</h2>
+    <p id="innerHTMLDemo"></p>
+    <p id="promptDemo"></p>
+    <p id="confirmDemo"></p>
+
+    <script>
+        console.log("This is a console log message.");
+
+        document.write("This text is written using document.write()<br>");
+        document.getElementById("innerHTMLDemo").innerHTML="This Text is set by getElementById";
+        alert("This is an alert message.");
+        let name=prompt("Enter your name");
+        let result=confirm("Do you want to continue?");
+        document.getElementById("confirmDemo").innerHTML="User selected:"+result;
+        document.getElementById("promptDemo").innerHTML="Welcome."+name;
+
+        console.warn("This is a warning message.");
+        console.error("This is an error message.");
+
+        
+
+</script>
+</body>
+</html>

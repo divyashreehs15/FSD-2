@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key press Events</title>
+</head>
+<body>
+    <h2>Press any key</h2>
+    <p id="output"></p>
+
+    <script>
+        document.addEventListener("keydown",function(i){
+            document.getElementById("output").textContent="Key down "+i.key;
+        });
+
+        document.addEventListener("keypress",function(i){
+            document.getElementById("output").textContent="You are pressing "+event.key;
+        });
+
+        document.addEventListener("keyup",function(event){
+            document.getElementById("output").textContent="Key up "+event.key;
+        });
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function handleFocus(){
+            document.getElementById("msg").innerHTML="text field is active(onfocus)";
+            document.getElementById("text").style.backgroundColor="lightgrey";
+        }
+
+        function handleBlur(){
+            document.getElementById("msg").innerHTML="text field is inactive(onblur)";
+            document.getElementById("msg").style.backgroundColor="white";
+        }
+
+        function handleInput(){
+            let text=document.getElementById("text").value;
+            let msg=document.getElementById("msg");
+            if(text.length===0){
+                msg.innerHTML="Start typing your text(oninput)";
+                msg.style.color="#616161";
+            }
+            else if(text.length<6){
+                msg.innerHTML="Weak text(oninput)";
+                msg.style.color="red";
+            } 
+            else if(text.length<10){
+                msg.innerHTML="Moderate text(oninput)";
+                msg.style.color="orange";
+            }
+            else{
+                msg.innerHTML="Strong text(oninput)";
+                msg.style.color="green";
+            }
+            
+        }
+        function handleKeyup(){
+            document.getElementById("msg").innerHTML="handle up key event";
+            document.getElementById("msg").style.color="blue";
+        }
+
+        function handleKeydown(){
+            document.getElementById("msg").innerHTML="handle down key event";
+            document.getElementById("msg").style.color="purple";
+        }
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h2>Handling event from a text field</h2>
+
+    <label for="text">Type something here:</label>
+    <input type="text" id="text" name="text"
+    onfocus="handleFocus()";
+    onblur="handleBlur()";
+    oninput="handleInput()";
+    onkeyup="handleKeyup()";
+    onkeydown="handleKeydown()";>
+
+    <p id="msg">Perform an action on text field to see event response</p>
+</body>
+</html>

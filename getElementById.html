@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Hello World</h1>
+    <p id="para">This is a paragraph.</p>
+    <button id="btn" >Click Me</button>
+    <script>
+        const header=document.getElementById("heading");
+        const paragraph=document.getElementById("para");
+        const button=document.getElementById("btn");
+
+        function changeContent(){
+            header.textContent="Welcome to JavaScript DOM";
+            paragraph.textContent="This paragraph has been changed using getElementById.";
+            button.textContent="Content Changed";
+        }
+        button.addEventListener("click",changeContent);
+        
+
+
+
+    </script>
+
+</body>
+</html>

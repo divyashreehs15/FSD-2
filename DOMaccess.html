@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Accessing</title>
+</head>
+<body>
+    <h1 id="mainHeading">Welcome students</h1>
+    <p class="text">This is first paragraph with class 'text'.</p>
+    <p class="text">This is second paragraph with class 'text'.</p>
+    <h2>This is subheading 1</h2>
+    <h2>This is subheading 2</h2>
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry</li> 
+    </ul>
+    <button onclick="demoAccess()">Run DOM Demo</button>
+    <script>
+    function demoAccess(){
+        document.getElementById("mainHeading").style.color="blue";
+        const paragraphs=document.getElementsByClassName("text");
+        paragraphs[0].style.fontWeight="bold";
+        paragraphs[1].style.color="blue";
+
+        const subHeading=document.getElementsByTagName("h2");
+        subHeading[0].style.backgroundColor="yellow";
+        subHeading[1].style.fontStyle="italic";
+
+        const firstPara=document.querySelector(".text");
+        firstPara.style.backgroundColor="lightgreen";
+        
+        const items=document.querySelectorAll("ul li");
+        items.forEach(item=>{item.style.textTransform="uppercase"});
+        
+    }
+    </script>
+</body>
+</html>
